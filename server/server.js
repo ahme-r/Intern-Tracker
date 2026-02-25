@@ -14,12 +14,14 @@ app.use(express.json());
 
 // Routes
 app.use('/api/interns', internRoutes);
-
+// This handles the request for the root URL (the homepage)
+app.get('/', (req, res) => {
+    res.send('Intern Tracker API is running successfully!');
+});
 // Error Handler
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 8080;
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB');
