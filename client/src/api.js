@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://intern-tracker-production.up.railway.app/api';
+const API_URL = 'https://intern-tracker-production.up.railway.app/api/interns';
 
 const api = axios.create({
     baseURL: API_URL
